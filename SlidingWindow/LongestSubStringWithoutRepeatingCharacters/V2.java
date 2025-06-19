@@ -8,15 +8,15 @@ public class lfg{
         String s = sc.next();
         int l=0,h=0,curr=0,max=0;
         HashSet<Character> set = new HashSet<>();
-        while(h<n){
-            char ch = s.charAt(h);
-            while(set.contains(ch)){
+        while(h<n){ // code
+            char ch = s.charAt(h); // update
+            while(set.contains(ch)){ // shrinking condition
                 set.remove(s.charAt(l));
                 l++;
             }
-            set.add(ch);
-            max=Math.max(h-l+1,max);
-            h++;
+            set.add(ch); 
+            max=Math.max(h-l+1,max); // result update
+            h++; // high pointer up
         }
         System.out.println(max);
     }
