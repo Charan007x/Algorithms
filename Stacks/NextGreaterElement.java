@@ -7,7 +7,7 @@ public class New{
         for(int i=0;i<n;i++) a[i]=sc.nextInt();
         Stack<Integer> st = new Stack<>();
         int nge[]=new int[n];
-        Arrays.fill)(nge,-1);
+        Arrays.fill(nge,-1);
         for(int i=n-1;i>=0;i--){
             while(!st.isEmpty()&&st.peek()<=a[i]) st.pop();
             if(!st.isEmpty()) nge[i]=st.peek();
