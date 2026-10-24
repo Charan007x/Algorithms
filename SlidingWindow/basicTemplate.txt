@@ -1,0 +1,60 @@
+HandTyped by Sai Charan Gottipalli
+
+// Template -1 (Basic Template for Sliding Window) 
+
+while(h<n){
+    // include the high value, eg: sum+a[h]
+    while(condition failing){
+        // exclude the low value, eg: sum-a[l]
+        l++;
+    }
+    // calculate the result, eg: max(sum, result)
+    h++;
+}
+
+-> Works only for postive numbers. Use Prefix sum to handle non positive (including zero).
+
+
+// Template -2 (Find Length)
+while(h<n){
+    // include the high value, eg: sum+a[h]
+    while(condition failing){
+        // exclude the low value, eg: sum-a[l]
+        l++;
+    }
+    max=Math.max(max, h-l+1); // here h-l+1 is the size of the window
+    h++;
+}
+
+
+
+// Template -3 (Count Subarrays)
+
+while(h<n){
+    // include the high value, eg: sum+a[h]
+    while(condition failing){
+        // exclude the low value, eg: sum-a[l]
+        l++;
+    }
+    count+=h-l+1; // here h-l+1 no. of valid subarrays ending at h
+    h++;
+}
+
+
+
+// Template -4 (Fixed Size Window)
+
+// say k is the size of the fixed window. 
+
+for(int i=0; i<k; i++){
+    // include the first k elements, eg: sum+=a[i]
+}
+
+while(h<n){
+    // include the high value, eg: sum+=a[h]
+    // exclude the low value, eg: sum-=a[l]
+    // calculate the result, eg: max(sum, result)
+    l++;
+    h++;
+}
+
