@@ -1,0 +1,23 @@
+// HandTyped by Sai Charan Gottipalli
+
+// Template to find GCD of two numbers a and b
+// considering a>b, if not swap a and b
+
+
+while(b!=0){
+    int rem=a%b;
+    a=b;
+    b=rem;
+}
+return a; // a is the GCD of the two numbers
+
+
+// Template to find LCM of two numbers a and b
+// considering a>b, if not swap a and b
+
+lcm = (a*b)/gcd(a,b)
+
+
+
+Time Complexity: O(log(min(a,b)))
+Space Complexity: O(1)
