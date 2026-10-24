@@ -1,0 +1,21 @@
+// HandTyped by Sai Charan Gottipalli
+
+// Template to get n th prime number using Sieve of Eratosthenes
+
+boolean prime[]=new boolean[n+1]; 
+Arrays.fill(prime, true); // initially all numbers are prime
+prime[0]=false; // 0 is not prime
+prime[1]=false; // 1 is not prime
+for(int i=2;i*i<=n;i++){
+    if(prime[i]){
+        for(int j=i*i;j<=n;j+=i){
+            prime[j]=false; // mark all multiples of i as not prime
+        }
+    }
+}
+
+
+// now if prime[i] is true, then i is prime
+
+Time Complexity: O(nlog(log(n)))
+Space Complexity: O(n)
