@@ -1,0 +1,32 @@
+// HandTyped by Sai Charan Gottipalli
+
+// Unlike Arrays.sort, Comparator sorting is used to sort based on conditions
+
+// Say you have two arrays where it says a[i] is height of a person and b[i] is the weight of the person.
+// We have to sort as per ascending heights and if the height is same then sort as per descending weights. 
+// Then we can use the below code snippet.
+
+
+int a[]={1,2,3,3,5};
+int b[]={10,20,30,40,50};
+Integer idx[]=new Integer[n];
+for(int i=0;i<n;i++) idx[i]=i;
+Arrays.sort(idx, (i, j) -> { // Sort indices based on the condition
+    if(a[i] != a[j]) return a[i] - a[j]; // Sort by height in ascending order
+    return b[j] - b[i]; // If heights are same, sort by weight in descending order
+});
+int c[]=new int[n]; // sorted array of heights
+int d[]=new int[n]; // sorted array of weights
+for(int i=0;i<n;i++){
+    c[i]=a[idx[i]];
+    d[i]=b[idx[i]];
+}
+
+Time Complexity: O(nlog(n)) for sorting, O(n) for creating sorted arrays
+
+But if the integers are very large, then we can use the below code snippet to avoid overflow.
+
+Arrays.sort(idx, (i, j) -> { // Sort indices based on the condition
+    if(a[i] != a[j]) return Integer.compare(a[i], a[j]); // Sort by height in ascending order
+    return Integer.compare(b[j], b[i]); // If heights are same, sort by weight in descending order
+});
